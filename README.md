@@ -1,5 +1,4 @@
-```md
-# 🎨 Database System Overview
+## 🎨 Database System Overview
 
 ## 🧱 1. Three-Tier Architecture
 
@@ -7,7 +6,6 @@
 graph LR
   A[👨‍💻 Client <br> (GUI/Web Interface)] --> B[🌐 Application/Web Server <br> (App Programs/Web Pages)]
   B --> C[🗄️ Database Server <br> (DBMS)]
-```
 
 ---
 

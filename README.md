@@ -1,4 +1,4 @@
-
+```md
 # 🎨 Database System Overview
 
 ## 🧱 1. Three-Tier Architecture
@@ -98,89 +98,93 @@ graph TD
 
 ## 🧱 7. Data Definition Language (DDL)
 
-\`\`\`sql
+```sql
 CREATE TABLE table_name(col1 datatype, col2 datatype, ...);
 ALTER TABLE table_name ADD column_name datatype;
 TRUNCATE TABLE table_name;
 DROP TABLE table_name;
 RENAME TABLE old_table TO new_table;
-\`\`\`
+```
 
 ---
 
 ## ✍️ 8. Data Manipulation Language (DML)
 
-\`\`\`sql
+```sql
 INSERT INTO table_name(col1, col2) VALUES (val1, val2);
 UPDATE table_name SET col1 = val1 WHERE condition;
 DELETE FROM table_name WHERE condition;
 SELECT col1, col2 FROM table_name WHERE condition;
-\`\`\`
+```
 
 ---
 
 ## 🛡️ 9. Data Control Language (DCL)
 
-\`\`\`sql
+```sql
 GRANT SELECT ON Student TO Ratul;
 REVOKE SELECT ON Student FROM Ratul;
-\`\`\`
+```
 
 ---
 
 ## 🔄 10. Transaction Control Language (TCL)
 
-\`\`\`sql
+```sql
 COMMIT;
 SAVEPOINT my_savepoint;
 ROLLBACK TO my_savepoint;
 SET TRANSACTION READ WRITE;
-\`\`\`
+```
 
 ---
 
 ## 📊 Aggregate Functions
 
-\`\`\`sql
+```sql
 SELECT COUNT(col1) FROM table_name;
 SELECT COUNT(DISTINCT col1) FROM table_name;
 SELECT SUM(col1) FROM table_name;
 SELECT AVG(col1) FROM table_name;
 SELECT MIN(col1) FROM table_name;
 SELECT MAX(col1) FROM table_name;
-\`\`\`
+```
 
 ---
 
 ## 📚 GROUP BY and HAVING
 
-\`\`\`sql
+```sql
 SELECT COUNT(colx), coly
 FROM table_name
 GROUP BY colz
 HAVING COUNT(cola) >= vala;
-\`\`\`
+```
 
 ---
 
 ## 🔃 ORDER BY
 
-\`\`\`sql
+```sql
 SELECT col1, col2
 FROM table_name
 ORDER BY col1 DESC;
-\`\`\`
+```
 
 ---
 
 ## 🔍 LIKE Clause
 
-\`\`\`sql
+```sql
 LIKE '_%'  -- _ = single char, % = any sequence
 -- Example
 SELECT * FROM users WHERE name LIKE '_ohn%';
-\`\`\`
+```
 
 ---
 
 > 📌 **Tip:** Use markdown preview in VS Code or GitHub for best visuals. For diagrams, you can use Mermaid.js or plantUML-enabled viewers.
+
+---
+
+Would you like me to export 

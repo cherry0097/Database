@@ -1,12 +1,14 @@
-## 🎨 Database System Overview
+
+# 🎨 Database System Overview
 
 ## 🧱 1. Three-Tier Architecture
 
 ```mermaid
 graph LR
-  A[👨‍💻 Client <br> (GUI/Web Interface)] --> B[🌐 Application/Web Server <br> (App Programs/Web Pages)]
-  B --> C[🗄️ Database Server <br> (DBMS)]
+  A[👨‍💻 Client (GUI/Web Interface)] --> B[🌐 Application/Web Server (App Programs/Web Pages)]
+  B --> C[🗄️ Database Server (DBMS)]
 ```
+
 ---
 
 ## 🧩 2. View of Data (Abstraction Levels)
@@ -53,6 +55,49 @@ graph LR
 
 ## 🏗️ 6. Database System Architecture
 
+### 🧩 Full Architecture Diagram
+
+```mermaid
+flowchart TD
+    subgraph Users
+        A1[🙋 Naive Users\n(Tellers, Agents, Web Users)] --> A2[🖥️ App Interface]
+        B1[💻 Application Programmers] --> B2[🧾 App Programs]
+        C1[🧠 Sophisticated Users\n(Analysts)] --> C2[🔍 Query Tools]
+        D1[🛠 Database Administrators] --> D2[⚙️ Admin Tools]
+    end
+
+    subgraph System_Components
+        A2 --> SC1[📦 App Program Object Code]
+        B2 --> SC1
+        C2 --> SC3[💬 DML Queries]
+        D2 --> SC4[🛠️ DDL Interpreter]
+    end
+
+    subgraph Query_Processor
+        SC1 --> Q1[⚙️ Query Evaluation Engine]
+        SC3 --> Q2[DML Compiler & Organizer]
+        Q2 --> Q1
+        Q1 --> Q3[📊 Statistical Data]
+    end
+
+    subgraph Storage_Manager
+        Q1 --> SM1[🧮 Buffer Manager]
+        Q1 --> SM2[📂 File Manager]
+        Q1 --> SM3[🔄 Transaction Manager]
+        Q1 --> SM4[🔐 Auth & Integrity Manager]
+    end
+
+    subgraph Disk_Storage
+        SM1 --> DS1[(📑 Data)]
+        SM2 --> DS2[(🗂️ Indices)]
+        Q3 --> DS3[(📊 Statistical Data)]
+        SM4 --> DS4[(📘 Data Dictionary)]
+    end
+```
+
+---
+
+
 ### 👥 Users Interaction
 
 ```mermaid
@@ -67,7 +112,7 @@ flowchart TB
 
 ```mermaid
 graph TD
-  AppCode[📦 Application Program Object Code] --> Engine[⚙️ Query Evaluation Engine]
+  AppCode[📦 App Program Object Code] --> Engine[⚙️ Query Eval Engine]
   Engine --> Manager[🗃️ Storage Manager]
   Manager --> Compiler[🛠️ DML Compiler & Organizer]
 ```
@@ -182,7 +227,3 @@ SELECT * FROM users WHERE name LIKE '_ohn%';
 ---
 
 > 📌 **Tip:** Use markdown preview in VS Code or GitHub for best visuals. For diagrams, you can use Mermaid.js or plantUML-enabled viewers.
-
----
-
-Would you like me to export 

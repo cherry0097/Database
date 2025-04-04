@@ -6,7 +6,7 @@
 graph LR
   A[👨‍💻 Client <br> (GUI/Web Interface)] --> B[🌐 Application/Web Server <br> (App Programs/Web Pages)]
   B --> C[🗄️ Database Server <br> (DBMS)]
-
+```
 ---
 
 ## 🧩 2. View of Data (Abstraction Levels)

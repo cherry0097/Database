@@ -1,229 +1,167 @@
+# Database Management System (DBMS) 📚
 
-# 🎨 Database System Overview
-
-## 🧱 1. Three-Tier Architecture
-
-```mermaid
-graph LR
-  A[Client (GUI/Web Interface]] --> B[Application/Web Server (App Programs/Web Pages]]
-  B --> C[Database Server (DBMS]]
+## 1. Three-Tier Architecture 🏗️
+```
+Client [GUI, Web interface] --> Application Server or Web Server [Application programs, Web pages] --> Database Server [Database Management System]
 ```
 
----
+## 2. View of Data 🔍
+### Data Abstraction:
+- **Physical Level** (Lowest Level) ⚙️
+  - Deals with how data is stored.
+  - Uses complex data structures.
+- **Logical Level** 📊
+  - Deals with what data is stored and its relationships.
+  - Uses simple data structures.
+- **View Level** (Highest Level) 👀
+  - Defines how users access data.
 
-## 🧩 2. View of Data (Abstraction Levels)
+## 3. Schemas 🏗️
+- **What is a Schema?**
+  - It is the overall design of a database.
+  - It is not frequently changed.
 
-| Level        | Description                                | Complexity        |
-|--------------|--------------------------------------------|-------------------|
-| 🔧 **Physical** | How data is stored, uses complex structures | 🔽 Lowest          |
-| 📊 **Logical**  | What data is stored and relationships      | ⚖️ Medium          |
-| 👀 **View**     | User-level access and representation       | 🔼 Highest         |
+### Three Levels of Schemas:
+- **Sub-Schemas**
+- **Logical Schema**
+- **Physical Schema**
 
----
+## 4. Types of Users 👥
+- **Naive Users** - End users interacting via applications.
+- **Application Programmers** - Developers creating database applications.
+- **Sophisticated Users** - Analysts using advanced queries.
+- **Specialized Users** - Database Administrators managing the system.
 
-## 🧬 3. Schemas
+## 5. Data Models 🏛️
+- **Relational Model** 📊
+- **Entity-Relationship (E-R) Model** 🏗️
+- **Object-based Data Model** 🛠️
+- **Semi-structured Data Model** 🗄️
 
-📌 A schema is like a **variable declaration** for your database — the **overall design**. It's stable and rarely changed.
-
-### Types of Schemas:
-
-- 🔹 **Sub-Schemas** — User-specific views
-- 🔸 **Logical Schema** — Logical structure of entire database
-- ⚙️ **Physical Schema** — Actual physical storage structure
-
----
-
-## 👥 4. Types of Users
-
-| User Type             | Role/Description                        |
-|-----------------------|-----------------------------------------|
-| 🙋 **Naive Users**        | End users (e.g. bank tellers)             |
-| 💻 **Application Programmers** | Build and maintain application software |
-| 🧠 **Sophisticated Users**   | Analysts, write complex queries         |
-| 🛠️ **Specialized Users**     | DBAs and engineers managing systems     |
-
----
-
-## 🧾 5. Data Models
-
-- 📘 **Relational Model**
-- 📙 **Entity-Relationship (ER) Model**
-- 📗 **Object-Based Model**
-- 📕 **Semi-Structured Model** (e.g., XML, JSON)
-
----
-
-## 🏗️ 6. Database System Architecture
-
-### 🧩 Full Architecture Diagram
-
+## 6. Database System Architecture 🏗️
+### Diagram Representation:
 ```mermaid
-flowchart TD
-    subgraph Users
-        A1[Naive Users\n(Tellers Agents Web Users]] --> A2[App Interfac]]
-        B1[Application Programmer]] --> B2[App Program]]
-        C1[Sophisticated Users\n(Analysts]] --> C2[Query Tool]]
-        D1[Database Administrator]] --> D2[Admin Tool]]
-    end
-
-    subgraph System_Components
-        A2 --> SC1[App Program Object Cod]]
-        B2 --> SC1
-        C2 --> SC3[DML Querie]]
-        D2 --> SC4[DDL Interprete]]
-    end
-
-    subgraph Query_Processor
-        SC1 --> Q1[Query Evaluation Engin]]
-        SC3 --> Q2[ML Compiler  Organize]]
-        Q2 --> Q1
-        Q1 --> Q3[Statistical Dat]]
-    end
-
-    subgraph Storage_Manager
-        Q1 --> SM1[Buffer Manage]]
-        Q1 --> SM2[File Manage]]
-        Q1 --> SM3[Transaction Manage]]
-        Q1 --> SM4[Auth  Integrity Manage]]
-    end
-
-    subgraph Disk_Storage
-        SM1 --> DS1[ Data]]
-        SM2 --> DS2[ Indices]]
-        Q3 --> DS3[ Statistical Data]]
-        SM4 --> DS4[ Data Dictionary]]
-    end
+graph TD;
+  A[Naive Users (Tellers, Agents, Web Users)] -->|Use| B(Application Interfaces);
+  C[Application Programmers] -->|Write| D(Application Programs);
+  E[Sophisticated Users (Analysts)] -->|Use| F(Query Tools);
+  G[Database Administrators] -->|Use| H(Administration Tools);
+  B --> I[Application Program Object Code];
+  D --> J[Compiler and Linker];
+  F --> K[DML Queries];
+  H --> L[DDL Interpreter];
+  I --> M[Query Evaluation Engine];
+  K --> N[DML Compiler and Organizer];
+  L --> N;
+  M --> O[Buffer Manager];
+  M --> P[File Manager];
+  N --> Q[Authorization & Integrity Manager];
+  N --> M;
+  Q --> R[Transaction Manager];
+  P --> S[Disk Storage: Data, Indices, Statistical Data, Data Dictionary];
+  O --> S;
+  R --> S;
 ```
 
----
-
-
-### 👥 Users Interaction
-
-```mermaid
-flowchart TB
-  Naive[Naive User]] -->|Use| UI[Application Interfac]]
-  Programmer[App Programmer]] -->|Write| Code[Application Cod]]
-  Analyst[Analyst]] -->|Use| Tools[Query Tool]]
-  Admin[Admin]] -->|Use| AdminTools[Admin Tool]]
-```
-
-### 🔧 System Components
-
-```mermaid
-graph TD
-  AppCode[App Program Object Cod]] --> Engine[Query Eval Engin]]
-  Engine --> Manager[Storage Manage]]
-  Manager --> Compiler[DML Compiler  Organize]]
-```
-
-### 🧠 Query Processor
-
-- **Query Eval Engine**
-- **DML Compiler**
-- **Stats Collector**
-
-### 📦 Storage Manager
-
-- 🧮 Buffer Manager  
-- 📂 File Manager  
-- 🔄 Transaction Manager  
-- 🔐 Auth & Integrity Manager
-
-### 💾 Disk Storage
-
-- 📑 Data  
-- 🗂️ Indices  
-- 📊 Statistical Data  
-- 📘 Data Dictionary (Metadata)
-
----
-
-## 🧱 7. Data Definition Language (DDL)
-
+## 7. Data Definition Language (DDL) Commands 📜
 ```sql
-CREATE TABLE table_name(col1 datatype, col2 datatype, ...);
+-- Create a new table
+CREATE TABLE table_name(col1 datatype, col2 datatype, ... coln datatype);
+
+-- Add another column to the table
 ALTER TABLE table_name ADD column_name datatype;
+
+-- Remove all rows from the table but keep its structure
 TRUNCATE TABLE table_name;
+
+-- Remove the table completely
 DROP TABLE table_name;
-RENAME TABLE old_table TO new_table;
+
+-- Rename a table
+RENAME TABLE old_table_name TO new_table_name;
 ```
 
----
-
-## ✍️ 8. Data Manipulation Language (DML)
-
+## 8. Data Manipulation Language (DML) Commands ✍️
 ```sql
-INSERT INTO table_name(col1, col2) VALUES (val1, val2);
-UPDATE table_name SET col1 = val1 WHERE condition;
+-- Insert data into a table
+INSERT INTO table_name(col1, col2, ..., coln) VALUES (val1, val2, ..., valn);
+
+-- Update records in a table
+UPDATE table_name SET col1=val1, col2=val2, ... coln=valn WHERE condition;
+
+-- Delete specific records from a table
 DELETE FROM table_name WHERE condition;
-SELECT col1, col2 FROM table_name WHERE condition;
+
+-- Retrieve specific records from a table
+SELECT col1, col2, ..., coln FROM table_name WHERE condition;
 ```
 
----
-
-## 🛡️ 9. Data Control Language (DCL)
-
+## 9. Data Control Language (DCL) Commands 🔐
 ```sql
+-- Grant privileges
+GRANT privilege_name1, privilege_name2 ON object_name1, object_name2 TO user1, user2;
+-- Example: Grant SELECT privilege to a user named Ratul
 GRANT SELECT ON Student TO Ratul;
-REVOKE SELECT ON Student FROM Ratul;
+
+-- Revoke privileges
+REVOKE privilege_name1, privilege_name2 ON object_name1, object_name2 FROM user1, user2;
 ```
 
----
-
-## 🔄 10. Transaction Control Language (TCL)
-
+## 10. Transaction Control Language (TCL) Commands 🔄
 ```sql
+-- Save changes permanently
 COMMIT;
-SAVEPOINT my_savepoint;
-ROLLBACK TO my_savepoint;
-SET TRANSACTION READ WRITE;
+
+-- Create a savepoint
+SAVEPOINT savepoint_name;
+
+-- Rollback to a specific savepoint
+ROLLBACK TO savepoint_name;
+
+-- Set transaction properties
+SET TRANSACTION [READ WRITE || READ ONLY];
 ```
 
----
-
-## 📊 Aggregate Functions
-
+## 11. Aggregate Functions 🧮
 ```sql
+-- Count total values in a column
 SELECT COUNT(col1) FROM table_name;
+
+-- Count unique values in a column
 SELECT COUNT(DISTINCT col1) FROM table_name;
+
+-- Sum of values in a column
 SELECT SUM(col1) FROM table_name;
+
+-- Average value in a column
 SELECT AVG(col1) FROM table_name;
+
+-- Minimum value in a column
 SELECT MIN(col1) FROM table_name;
+
+-- Maximum value in a column
 SELECT MAX(col1) FROM table_name;
 ```
 
----
-
-## 📚 GROUP BY and HAVING
-
+## 12. SQL Clauses 📌
+### GROUP BY:
 ```sql
-SELECT COUNT(colx), coly
-FROM table_name
-GROUP BY colz
-HAVING COUNT(cola) >= vala;
+SELECT COUNT(colx), coly FROM table_name GROUP BY colz HAVING COUNT(cola) >= vala;
+```
+
+### ORDER BY:
+```sql
+SELECT col1, col2, ..., coln FROM table_name ORDER BY col1, col2, ..., coln ASC|DESC;
+```
+
+### LIKE:
+```sql
+-- Using % wildcard (matches any sequence of characters)
+SELECT * FROM table_name WHERE col1 LIKE 'A%';
+
+-- Using _ wildcard (matches a single character)
+SELECT * FROM table_name WHERE col1 LIKE 'A_';
 ```
 
 ---
-
-## 🔃 ORDER BY
-
-```sql
-SELECT col1, col2
-FROM table_name
-ORDER BY col1 DESC;
-```
-
----
-
-## 🔍 LIKE Clause
-
-```sql
-LIKE '_%'  -- _ = single char, % = any sequence
--- Example
-SELECT * FROM users WHERE name LIKE '_ohn%';
-```
-
----
-
-> 📌 **Tip:** Use markdown preview in VS Code or GitHub for best visuals. For diagrams, you can use Mermaid.js or plantUML-enabled viewers.
+✨ **This document provides an overview of fundamental DBMS concepts and SQL commands in a well-structured and visually appealing manner.** ✨

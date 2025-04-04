@@ -5,8 +5,8 @@
 
 ```mermaid
 graph LR
-  A[Client (GUI/Web Interface] --> B[Application/Web Server (App Programs/Web Pages]
-  B --> C[Database Server (DBMS]
+  A[Client (GUI/Web Interface]] --> B[Application/Web Server (App Programs/Web Pages]]
+  B --> C[Database Server (DBMS]]
 ```
 
 ---
@@ -60,38 +60,38 @@ graph LR
 ```mermaid
 flowchart TD
     subgraph Users
-        A1[Naive Users\n(Tellers Agents Web Users] --> A2[App Interfac]
-        B1[Application Programmer] --> B2[App Program]
-        C1[Sophisticated Users\n(Analysts] --> C2[Query Tool]
-        D1[Database Administrator] --> D2[Admin Tool]
+        A1[Naive Users\n(Tellers Agents Web Users]] --> A2[App Interfac]]
+        B1[Application Programmer]] --> B2[App Program]]
+        C1[Sophisticated Users\n(Analysts]] --> C2[Query Tool]]
+        D1[Database Administrator]] --> D2[Admin Tool]]
     end
 
     subgraph System_Components
-        A2 --> SC1[App Program Object Cod]
+        A2 --> SC1[App Program Object Cod]]
         B2 --> SC1
-        C2 --> SC3[DML Querie]
-        D2 --> SC4[DDL Interprete]
+        C2 --> SC3[DML Querie]]
+        D2 --> SC4[DDL Interprete]]
     end
 
     subgraph Query_Processor
-        SC1 --> Q1[Query Evaluation Engin]
-        SC3 --> Q2[ML Compiler  Organize]
+        SC1 --> Q1[Query Evaluation Engin]]
+        SC3 --> Q2[ML Compiler  Organize]]
         Q2 --> Q1
-        Q1 --> Q3[Statistical Dat]
+        Q1 --> Q3[Statistical Dat]]
     end
 
     subgraph Storage_Manager
-        Q1 --> SM1[Buffer Manage]
-        Q1 --> SM2[File Manage]
-        Q1 --> SM3[Transaction Manage]
-        Q1 --> SM4[Auth  Integrity Manage]
+        Q1 --> SM1[Buffer Manage]]
+        Q1 --> SM2[File Manage]]
+        Q1 --> SM3[Transaction Manage]]
+        Q1 --> SM4[Auth  Integrity Manage]]
     end
 
     subgraph Disk_Storage
-        SM1 --> DS1[ Data]
-        SM2 --> DS2[ Indices]
-        Q3 --> DS3[ Statistical Data]
-        SM4 --> DS4[ Data Dictionary]
+        SM1 --> DS1[ Data]]
+        SM2 --> DS2[ Indices]]
+        Q3 --> DS3[ Statistical Data]]
+        SM4 --> DS4[ Data Dictionary]]
     end
 ```
 
@@ -102,19 +102,19 @@ flowchart TD
 
 ```mermaid
 flowchart TB
-  Naive[Naive User] -->|Use| UI[Application Interfac]
-  Programmer[App Programmer] -->|Write| Code[Application Cod]
-  Analyst[Analyst] -->|Use| Tools[Query Tool]
-  Admin[Admin] -->|Use| AdminTools[Admin Tool]
+  Naive[Naive User]] -->|Use| UI[Application Interfac]]
+  Programmer[App Programmer]] -->|Write| Code[Application Cod]]
+  Analyst[Analyst]] -->|Use| Tools[Query Tool]]
+  Admin[Admin]] -->|Use| AdminTools[Admin Tool]]
 ```
 
 ### 🔧 System Components
 
 ```mermaid
 graph TD
-  AppCode[App Program Object Cod] --> Engine[Query Eval Engin]
-  Engine --> Manager[Storage Manage]
-  Manager --> Compiler[DML Compiler  Organize]
+  AppCode[App Program Object Cod]] --> Engine[Query Eval Engin]]
+  Engine --> Manager[Storage Manage]]
+  Manager --> Compiler[DML Compiler  Organize]]
 ```
 
 ### 🧠 Query Processor

@@ -42,25 +42,26 @@ Client [GUI, Web interface] --> Application Server or Web Server [Application pr
 ### Diagram Representation:
 ```mermaid
 graph TD;
-  A[Naive Users (Tellers, Agents, Web Users)] -->|Use| B(Application Interfaces);
-  C[Application Programmers] -->|Write| D(Application Programs);
-  E[Sophisticated Users (Analysts)] -->|Use| F(Query Tools);
-  G[Database Administrators] -->|Use| H(Administration Tools);
-  B --> I[Application Program Object Code];
-  D --> J[Compiler and Linker];
-  F --> K[DML Queries];
-  H --> L[DDL Interpreter];
-  I --> M[Query Evaluation Engine];
-  K --> N[DML Compiler and Organizer];
+  A["Naive Users (Tellers, Agents, Web Users)"] -->|Use| B["Application Interfaces"];
+  C["Application Programmers"] -->|Write| D["Application Programs"];
+  E["Sophisticated Users (Analysts)"] -->|Use| F["Query Tools"];
+  G["Database Administrators"] -->|Use| H["Administration Tools"];
+  B --> I["Application Program Object Code"];
+  D --> J["Compiler and Linker"];
+  F --> K["DML Queries"];
+  H --> L["DDL Interpreter"];
+  I --> M["Query Evaluation Engine"];
+  K --> N["DML Compiler and Organizer"];
   L --> N;
-  M --> O[Buffer Manager];
-  M --> P[File Manager];
-  N --> Q[Authorization & Integrity Manager];
+  M --> O["Buffer Manager"];
+  M --> P["File Manager"];
+  N --> Q["Authorization & Integrity Manager"];
   N --> M;
-  Q --> R[Transaction Manager];
-  P --> S[Disk Storage: Data, Indices, Statistical Data, Data Dictionary];
+  Q --> R["Transaction Manager"];
+  P --> S["Disk Storage"];
   O --> S;
   R --> S;
+  S -->|Contains| T["Data, Indices, Statistical Data, Data Dictionary"];
 ```
 
 ## 7. Data Definition Language (DDL) Commands 📜
